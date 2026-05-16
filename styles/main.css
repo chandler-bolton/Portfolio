@@ -12,6 +12,9 @@ main {
   align-items: center;
   justify-content: center;
   background-color: var(--primary-bg-color);
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 h1 {
@@ -37,13 +40,35 @@ h4 {
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--primary-text-color);
 }
 
 a {
-  color: #0070f3;
+  color: #e0e0e0;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+li { 
+  font-size: 1rem;
+  color: var(--primary-text-color);
+  margin-bottom: 0.5rem;
+}
+
+li.square {
+  list-style-type: square;
+  margin-left: 1.5rem;
+}
+
+li.circle {
+  list-style-type: circle;
+  margin-left: 1.5rem;
 }
 
 /* Module Styles */
@@ -66,12 +91,32 @@ a {
   width: 90%;
   height: 1px;
   background-color: #eee;
-  margin: 2rem 0;
+  margin: 2rem auto;
 }
 
 .textContainer {
-  max-width: 75rem;
+  max-width: 90%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+}
+
+.leftAlign {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+}
+
+.rightAlign {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: start;
+  align-items: end;
 }
 
 .featuredProjects { 
@@ -99,10 +144,23 @@ a {
 
 .projectCard:hover {
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 	}
 
 .projectCard p {
   color: #aaa;
+}
+
+.homeLink {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: #0070f3;
+  text-decoration: none;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  width: 100%;
 }
 
 /* Footer Styles */
@@ -123,6 +181,8 @@ a {
 .footer ul {
   list-style: none;
   display: flex;
+  justify-content: center;
+  flex-direction: row;
   gap: 1rem;
   padding: 0;
 }
@@ -134,4 +194,6 @@ a {
 
 .footer a:hover {
   text-decoration: underline;
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
 }

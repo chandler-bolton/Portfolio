@@ -16,7 +16,7 @@ export default function Home() {
 
 				<div className="divider"></div>
 
-				<div className="textContainer">
+				<div className="textContainer leftAlign">
 					<p>
 						I'm a Cloud & Integrations Engineer with a passion for building scalable and efficient solutions. 
 						<br/><br/>
@@ -26,15 +26,15 @@ export default function Home() {
 					</p>
 				</div>
 
-				<div className="textContainer buffer">
+				<div className="textContainer leftAlign">
 					<p>
-						<strong>Technical Skills:</strong> Node.js • Python •AWS • RESTful APIs • GraphQL •Data Pipelines • Databases • System Architecture • DevOps
+						<strong>Technical Skills:</strong><br/> Node.js • Python •AWS • RESTful APIs • GraphQL •Data Pipelines • Databases • System Architecture • DevOps
 					</p>
 				</div>
 			</section>
 
 			{/* ───── Featured Projects ─────  */}
-			<section className="buffer">
+			<section className="textContainer leftAlign">
 
 				<h2>
 					Featured Projects
@@ -60,25 +60,47 @@ export default function Home() {
 			</section>
 
 			{/* ───── About / Summary Section ───── */}
-			<section className="buffer">
+			<section className="textContainer leftAlign">
 				<h2>
 					What I Work On 
 				</h2>
 
-				<p className="textContainer">
-					I specialize in building and maintaining systems that connect
-					multiple platforms together. This includes handling API
+				<p className="">
+					I specialize in <i><u>building and maintaining systems that connect
+					multiple platforms together</u></i>. This includes handling API
 					inconsistencies, designing resilient synchronization pipelines,
 					managing data integrity, and ensuring systems remain reliable under
 					real-world constraints like rate limits, incomplete documentation,
 					and evolving schemas.
-					<br></br>
-					I have extensive experience with backend development, particularly in building API integrations and data pipelines. I enjoy working on complex problems that require designing solutions to handle data synchronization, error handling, and performance optimization across distributed systems.
 					<br/><br/>
-					I also have extensive experience with frontend development, particularly in building user interfaces for data visualization and interaction. I enjoy creating intuitive dashboards and tools that help users make sense of complex data and workflows.
+					I have <i><u>extensive experience with backend development</u></i>, particularly in building API integrations and data pipelines. I enjoy working on complex problems that require designing solutions to handle data synchronization, error handling, and performance optimization across distributed systems.
+					<br/><br/>
+					I also have <i><u>extensive experience with frontend development</u></i>, particularly in building user interfaces for data visualization and interaction. I enjoy creating intuitive dashboards and tools that help users make sense of complex data and workflows.
 					<br/><br/>
 					My work is focused on solving real-world problems in enterprise environments, where systems need to be robust, scalable, and maintainable. I thrive on the challenge of designing solutions that can handle the complexities of distributed systems and data synchronization.
 				</p>
+			</section>
+
+			{/* ───── Projects Section ───── */}
+			<section className="textContainer leftAlign">
+				<h2>
+					Projects
+				</h2>
+
+				<p>
+					I've worked on a variety of projects that involve building integration platforms, data pipelines, and user interfaces. Some of my featured projects include:
+				</p>
+
+				<ul>
+					<li className="square">
+						<Link href="/projects/webex-integration"><b>Place Holder</b></Link> | 
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					</li>
+					<li className="square">
+						<Link href="/projects/webex-integration"><b>Place Holder</b></Link> | 
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					</li>
+				</ul>
 			</section>
 
 			{/* ───── Footer Section ───── */}
