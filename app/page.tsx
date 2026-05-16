@@ -1,79 +1,117 @@
 import Link from "next/link";
 import React from "react";
+import "@/styles/main.css";
 
-// Local import for styling
-import "../styles/main.css";
+import { projects } from "@/content/projects";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 export default function Home() {
+  	const featuredProjects = projects.slice(0, 3); // Get the first 3 projects as featured
 	return ( 
 		<main>
+			<Header />
 
 			<div className="main">
 
 				{/* ───── Hero Section ───── */}
-				<section className="hero">
-					<h1>
-						Cloud & Integrations Engineer
-					</h1>
+				<section className="hero buffer">
+
+						<div className="hero-left">
+							{/* <img src="/profile-pic.jpg" alt="Profile Picture" className="profilePic"/> */}
+							<h1>
+								Chandler Bolton
+							</h1>
+
+							<h2>
+								Cloud & Integrations Engineer
+							</h2>
+						</div>
+
+						<div className="hero-right">
+							
+							<div className="textContainer rightAlign">
+								<p className="buffer">
+									I'm a Cloud & Integrations Engineer with a passion for building scalable and efficient solutions. 
+								</p>
+
+								<p className="buffer flushedTop">
+									I design and build backend systems focused on API integrations, cloud infrastructure, and enterprise data synchronization. I also design and build frontend modules for data visualization and user interaction.
+								</p>
+
+								<p className="buffer flushedTop">
+									My work centers on solving real-world problems involving distributed systems, data consistency, and cross-platform orchestration.
+								</p>
+							</div>
+
+					</div>
+				
+				</section>
+
+					{/* ───── Featured Projects ─────  */}
+					<section className="textContainer buffer">
+
+						<h2 className="buffer flushedTop">
+							Featured Projects
+						</h2>
+
+						<div className="featuredProjects">
+							{featuredProjects.map((project) => (
+								<Link key={project.slug} href={`/projects/${project.slug}`} className="projectCard">
+									<h3>{project.title}</h3>
+									<p>{project.subtitle}</p>
+								</Link>
+							))}
+						</div>
+					</section>
+
+					{/* ───── View All Projects ───── */}
+					<section className="textContainer viewAllProjects">
+						<Link href="/projects" className="">
+							View All Projects →
+						</Link>
+					</section>
 
 					<div className="divider"></div>
 
-					<div className="textContainer leftAlign">
-						<p>
-							I'm a Cloud & Integrations Engineer with a passion for building scalable and efficient solutions. 
-							<br/><br/>
-							I design and build backend systems focused on API integrations, cloud infrastructure, and enterprise data synchronization. I also design and build frontend modules for data visualization and user interaction.
-							<br/>
-							My work centers on solving real-world problems involving distributed systems, data consistency, and cross-platform orchestration.
-						</p>
+					{/* ───── Skills Section ───── */}
+					<div className="textContainer">
+						<h2>
+							Technical Skills
+						</h2>
+
+						<div className="divider thin"></div>
+
+						<div className="skillsContainer parent">
+							<ul className="skillsList">
+								<li className="square">Frontend & Backend Development</li>
+								<li className="square">AWS & Cloud Infrastructure</li>
+								<li className="square">API Integrations & Synchronization Systems</li>
+								<li className="square">REST & GraphQL Architectures</li>
+								<li className="square">Distributed Data Pipelines</li>
+							</ul>
+							<ul className="skillsList">
+								<li className="square">Database & Data Integrity Systems</li>
+								<li className="square">System Architecture & Platform Design</li>
+								<li className="square">DevOps, Monitoring & Operational Tooling</li>
+								<li className="square">Technical Documentation & Client Communication</li>
+								<li className="square">Python | JavaScript | TypeScript | React | Node.js</li>
+							</ul>
+
+						</div>
+
 					</div>
 
-					<div className="textContainer leftAlign">
-						<p>
-							<strong>Technical Skills:</strong><br/> Node.js • Python •AWS • RESTful APIs • GraphQL •Data Pipelines • Databases • System Architecture • DevOps
-						</p>
-					</div>
-				</section>
-
-				{/* ───── Featured Projects ─────  */}
-				<section className="textContainer leftAlign">
-
-					<h2>
-						Featured Projects
-					</h2>
-
-					<div className="featuredProjects">
-						<Link href="/projects/loan-integration" className="projectCard">
-							<h3>Credit Systems Integration Platform</h3>
-							<p>
-								Unified Credit App Center, CreditSmarts, and Megasys into a
-								centralized HubSpot reporting architecture.
-							</p>
-						</Link>
-
-						<Link href="/projects/webex-integration" className="projectCard">
-							<h3>Webex Events ↔ HubSpot</h3>
-							<p>
-									Multi-system synchronization platform with AWS-based pipelines,
-									reconciliation logic, and centralized CRM reporting.
-							</p>
-						</Link>
-						<Link href="/projects/aws-development" className="projectCard">
-							<h3>AWS Infrastructure Development</h3>
-							<p>
-								AWS Cloud Infrastructure & Integration Platform Architecture for Client and Internal Systems
-							</p>
-						</Link>
-					</div>
-				</section>
+				<div className="divider"></div>
+				
 
 				{/* ───── About / Summary Section ───── */}
-				<section className="textContainer leftAlign">
+				<section className="textContainer">
 					<h2>
 						What I Work On 
 					</h2>
 
-					<p className="">
+					<p className="aboutSummary buffer flushedTop">
 						I specialize in <i><u>building and maintaining systems that connect
 						multiple platforms together</u></i>. This includes handling API
 						inconsistencies, designing resilient synchronization pipelines,
@@ -87,56 +125,25 @@ export default function Home() {
 						<br/><br/>
 						My work is focused on solving real-world problems in enterprise environments, where systems need to be robust, scalable, and maintainable. I thrive on the challenge of designing solutions that can handle the complexities of distributed systems and data synchronization.
 					</p>
-				</section>
 
-				{/* ───── Projects Section ───── */}
-				<section className="textContainer leftAlign">
-					<h2>
-						Projects
-					</h2>
+					<div className="divider thin"></div>
 
-					<p>
-						I've worked on a variety of projects that involve building integration platforms, data pipelines, and user interfaces. Some of my featured projects include:
+					<h2>About Me</h2>
+					<p className="aboutSummary buffer flushedTop">
+						I'm a software engineer with a passion for building scalable and efficient solutions. I have experience in both frontend and backend development, with a focus on API integrations, cloud infrastructure, and enterprise data synchronization. I enjoy solving complex problems and designing systems that can handle real-world constraints.
+						<br/><br/>
+						In my free time, I enjoy exploring new technologies, contributing to open source projects, and learning about the latest trends in software development. I'm always looking for opportunities to grow and take on new challenges in the tech industry. But above all else, I love spending time with my family.
 					</p>
 
-					<ul>
-						<li className="square">
-							<Link href="/projects/webex-integration"><b>Place Holder</b></Link> | 
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</li>
-						<li className="square">
-							<Link href="/projects/webex-integration"><b>Place Holder</b></Link> | 
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-						</li>
-					</ul>
 				</section>
+
+
+
 
 			</div>
 
 			{/* ───── Footer Section ───── */}
-			<section className="buffer footer">
-				<h2>
-					Links
-				</h2>
-
-				<ul className="textContainer">
-					<li>
-						<a href="https://www.linkedin.com/in/chandler-bolton" target="_blank" rel="noopener noreferrer">
-							LinkedIn
-						</a>
-					</li>
-					<li>
-						<a href="https://github.com/chandler-bolton" target="_blank" rel="noopener noreferrer">
-							GitHub
-						</a>
-					</li>
-					<li>
-						<a href="mailto:software.bolton@gmail.com" target="_blank" rel="noopener noreferrer">
-							Email
-						</a>
-					</li>
-				</ul>
-			</section>
+			<Footer />
 		</main>
 	)
 }

@@ -7,6 +7,7 @@ export type ProjectCaseStudy = {
   slug: string;
   title: string;
   subtitle: string;
+  featured?: boolean;
   summary: string;
   responsibilities: string[];
   challenges: ProjectSection[];
@@ -21,6 +22,8 @@ export const awsInfrastructureProject: ProjectCaseStudy = {
 
   subtitle:
     "AWS Cloud Infrastructure & Integration Platform Architecture for Client and Internal Systems",
+
+  featured: true,
 
   summary:
     "Designed and maintained a cloud-based integration platform that synchronized data between Credit App Center, CreditSmarts, Megasys, and HubSpot using AWS infrastructure. \n\nServed as lead developer and backend architecture designer across the integration ecosystem, overseeing synchronization pipelines, infrastructure, data normalization, QA workflows, client coordination, and system reporting architecture. The system centralized reporting, normalized disparate workflows, and maintained synchronization integrity across independently-operating platforms.\n\nThe infrastructure was designed with a strong focus on:\n  • operational resilience\n  • scalability\n  • observability\n  • fault tolerance\n  • maintainability\n  • rapid iteration\n  • long-term integration growth",

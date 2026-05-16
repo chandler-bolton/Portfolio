@@ -1,7 +1,10 @@
-import { projects } from "..";
+import { projects } from "@/content/projects";
 import Link from "next/link";
 import React from "react";
-import "../../../styles/main.css";
+import "@/styles/main.css";
+
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 type Props = {
   params: {
@@ -28,6 +31,7 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <main>
+	  <Header />
 
       <div className="main">
 
@@ -103,29 +107,7 @@ export default async function ProjectPage({ params }: Props) {
 
       </div>
 
-			<section className="buffer footer">
-				<h2>
-					Links
-				</h2>
-
-				<ul className="textContainer">
-					<li>
-						<a href="https://www.linkedin.com/in/chandler-bolton" target="_blank" rel="noopener noreferrer">
-							LinkedIn
-						</a>
-					</li>
-					<li>
-						<a href="https://github.com/chandler-bolton" target="_blank" rel="noopener noreferrer">
-							GitHub
-						</a>
-					</li>
-					<li>
-						<a href="mailto:software.bolton@gmail.com" target="_blank" rel="noopener noreferrer">
-							Email
-						</a>
-					</li>
-				</ul>
-			</section>
+	  <Footer />
 
     </main>
   );
