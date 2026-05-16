@@ -6,102 +6,112 @@ import "../styles/main.css";
 
 export default function Home() {
 	return ( 
-		<main className="main">
+		<main>
 
-			{/* ───── Hero Section ───── */}
-			<section className="hero">
-				<h1>
-					Cloud & Integrations Engineer
-				</h1>
+			<div className="main">
 
-				<div className="divider"></div>
+				{/* ───── Hero Section ───── */}
+				<section className="hero">
+					<h1>
+						Cloud & Integrations Engineer
+					</h1>
 
-				<div className="textContainer leftAlign">
-					<p>
-						I'm a Cloud & Integrations Engineer with a passion for building scalable and efficient solutions. 
+					<div className="divider"></div>
+
+					<div className="textContainer leftAlign">
+						<p>
+							I'm a Cloud & Integrations Engineer with a passion for building scalable and efficient solutions. 
+							<br/><br/>
+							I design and build backend systems focused on API integrations, cloud infrastructure, and enterprise data synchronization. I also design and build frontend modules for data visualization and user interaction.
+							<br/>
+							My work centers on solving real-world problems involving distributed systems, data consistency, and cross-platform orchestration.
+						</p>
+					</div>
+
+					<div className="textContainer leftAlign">
+						<p>
+							<strong>Technical Skills:</strong><br/> Node.js • Python •AWS • RESTful APIs • GraphQL •Data Pipelines • Databases • System Architecture • DevOps
+						</p>
+					</div>
+				</section>
+
+				{/* ───── Featured Projects ─────  */}
+				<section className="textContainer leftAlign">
+
+					<h2>
+						Featured Projects
+					</h2>
+
+					<div className="featuredProjects">
+						<Link href="/projects/loan-integration" className="projectCard">
+							<h3>Credit Systems Integration Platform</h3>
+							<p>
+								Unified Credit App Center, CreditSmarts, and Megasys into a
+								centralized HubSpot reporting architecture.
+							</p>
+						</Link>
+
+						<Link href="/projects/webex-integration" className="projectCard">
+							<h3>Webex Events ↔ HubSpot</h3>
+							<p>
+									Multi-system synchronization platform with AWS-based pipelines,
+									reconciliation logic, and centralized CRM reporting.
+							</p>
+						</Link>
+						<Link href="/projects/aws-development" className="projectCard">
+							<h3>AWS Infrastructure Development</h3>
+							<p>
+								AWS Cloud Infrastructure & Integration Platform Architecture for Client and Internal Systems
+							</p>
+						</Link>
+					</div>
+				</section>
+
+				{/* ───── About / Summary Section ───── */}
+				<section className="textContainer leftAlign">
+					<h2>
+						What I Work On 
+					</h2>
+
+					<p className="">
+						I specialize in <i><u>building and maintaining systems that connect
+						multiple platforms together</u></i>. This includes handling API
+						inconsistencies, designing resilient synchronization pipelines,
+						managing data integrity, and ensuring systems remain reliable under
+						real-world constraints like rate limits, incomplete documentation,
+						and evolving schemas.
 						<br/><br/>
-						I design and build backend systems focused on API integrations, cloud infrastructure, and enterprise data synchronization. I also design and build frontend modules for data visualization and user interaction.
-						<br/>
-						My work centers on solving real-world problems involving distributed systems, data consistency, and cross-platform orchestration.
+						I have <i><u>extensive experience with backend development</u></i>, particularly in building API integrations and data pipelines. I enjoy working on complex problems that require designing solutions to handle data synchronization, error handling, and performance optimization across distributed systems.
+						<br/><br/>
+						I also have <i><u>extensive experience with frontend development</u></i>, particularly in building user interfaces for data visualization and interaction. I enjoy creating intuitive dashboards and tools that help users make sense of complex data and workflows.
+						<br/><br/>
+						My work is focused on solving real-world problems in enterprise environments, where systems need to be robust, scalable, and maintainable. I thrive on the challenge of designing solutions that can handle the complexities of distributed systems and data synchronization.
 					</p>
-				</div>
+				</section>
 
-				<div className="textContainer leftAlign">
+				{/* ───── Projects Section ───── */}
+				<section className="textContainer leftAlign">
+					<h2>
+						Projects
+					</h2>
+
 					<p>
-						<strong>Technical Skills:</strong><br/> Node.js • Python •AWS • RESTful APIs • GraphQL •Data Pipelines • Databases • System Architecture • DevOps
+						I've worked on a variety of projects that involve building integration platforms, data pipelines, and user interfaces. Some of my featured projects include:
 					</p>
-				</div>
-			</section>
 
-			{/* ───── Featured Projects ─────  */}
-			<section className="textContainer leftAlign">
+					<ul>
+						<li className="square">
+							<Link href="/projects/webex-integration"><b>Place Holder</b></Link> | 
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						</li>
+						<li className="square">
+							<Link href="/projects/webex-integration"><b>Place Holder</b></Link> | 
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						</li>
+					</ul>
+				</section>
 
-				<h2>
-					Featured Projects
-				</h2>
-
-				<div className="featuredProjects">
-					<Link href="/projects/loan-integration" className="projectCard">
-						<h3>Credit Systems Integration Platform</h3>
-						<p>
-							Unified Credit App Center, CreditSmarts, and Megasys into a
-							centralized HubSpot reporting architecture.
-						</p>
-					</Link>
-
-					<Link href="/projects/webex-integration" className="projectCard">
-						<h3>Webex Events ↔ HubSpot</h3>
-						<p>
-								Multi-system synchronization platform with AWS-based pipelines,
-              					reconciliation logic, and centralized CRM reporting.
-						</p>
-					</Link>
-				</div>
-			</section>
-
-			{/* ───── About / Summary Section ───── */}
-			<section className="textContainer leftAlign">
-				<h2>
-					What I Work On 
-				</h2>
-
-				<p className="">
-					I specialize in <i><u>building and maintaining systems that connect
-					multiple platforms together</u></i>. This includes handling API
-					inconsistencies, designing resilient synchronization pipelines,
-					managing data integrity, and ensuring systems remain reliable under
-					real-world constraints like rate limits, incomplete documentation,
-					and evolving schemas.
-					<br/><br/>
-					I have <i><u>extensive experience with backend development</u></i>, particularly in building API integrations and data pipelines. I enjoy working on complex problems that require designing solutions to handle data synchronization, error handling, and performance optimization across distributed systems.
-					<br/><br/>
-					I also have <i><u>extensive experience with frontend development</u></i>, particularly in building user interfaces for data visualization and interaction. I enjoy creating intuitive dashboards and tools that help users make sense of complex data and workflows.
-					<br/><br/>
-					My work is focused on solving real-world problems in enterprise environments, where systems need to be robust, scalable, and maintainable. I thrive on the challenge of designing solutions that can handle the complexities of distributed systems and data synchronization.
-				</p>
-			</section>
-
-			{/* ───── Projects Section ───── */}
-			<section className="textContainer leftAlign">
-				<h2>
-					Projects
-				</h2>
-
-				<p>
-					I've worked on a variety of projects that involve building integration platforms, data pipelines, and user interfaces. Some of my featured projects include:
-				</p>
-
-				<ul>
-					<li className="square">
-						<Link href="/projects/webex-integration"><b>Place Holder</b></Link> | 
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</li>
-					<li className="square">
-						<Link href="/projects/webex-integration"><b>Place Holder</b></Link> | 
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</li>
-				</ul>
-			</section>
+			</div>
 
 			{/* ───── Footer Section ───── */}
 			<section className="buffer footer">

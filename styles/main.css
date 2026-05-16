@@ -6,7 +6,7 @@
 }
 
 /* Global Styles */
-main {
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -152,6 +152,15 @@ li.circle {
   color: #aaa;
 }
 
+.flushedTop {
+  margin-top: 0 !important;
+}
+
+.flushedBottom {
+  margin-bottom: 0 !important;
+}
+
+/* bug: width causes the page to expand -- will need to remove it */
 .homeLink {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -173,7 +182,7 @@ li.circle {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   margin-bottom: 1rem;
   background-color: var(--secondary-bg-color);
 }
