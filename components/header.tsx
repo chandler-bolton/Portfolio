@@ -16,13 +16,7 @@ export default function Header() {
 		<nav>
 			<div className="navGrid">
 				<div className="navGirdItemLeft">
-					{!isHome && (
-						<div className="textContainer leftAlign">
-						<div className="homeLink flushedTop">
-							<Link href="/">← Home</Link>
-						</div>
-						</div>
-					)}
+
 				</div>
 					
 				<div className="navGirdItemMiddle">
