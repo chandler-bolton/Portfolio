@@ -1,4 +1,4 @@
-import { projects } from "../../projects";
+import { projects } from "..";
 import Link from "next/link";
 import React from "react";
 
