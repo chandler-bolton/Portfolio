@@ -35,12 +35,6 @@ export default async function ProjectPage({ params }: Props) {
 
       <div className="main">
 
-        <div className="textContainer leftAlign ">
-          <div className="homeLink flushedTop">
-            <Link href="../">← Back to Projects</Link>
-          </div>
-        </div>
-
         <section className="textContainer leftAlign">
           <h1>{project.title}</h1>
           <p className=""><i>{project.subtitle}</i></p>
@@ -100,10 +94,6 @@ export default async function ProjectPage({ params }: Props) {
           <h2>Tech Stack</h2>
           <p>{project.techStack.join(" • ")}</p>
         </section>
-
-        <div className="homeLink buffer textContainer">
-          <Link href="../">← Back to Projects</Link>
-        </div>
 
       </div>
 

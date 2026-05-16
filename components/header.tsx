@@ -28,17 +28,17 @@ export default function Header() {
 				<div className="navGirdItemMiddle">
 					<ul className="textContainer naviItems">
 					<li>
-						<a href="/" target="_blank" rel="noopener noreferrer">
+						<a href="/">
 							Home
 						</a>
 					</li>
 					<li>
-						<a href="/projects" target="_blank" rel="noopener noreferrer">
+						<a href="/projects">
 							Projects
 						</a>
 					</li>
 					<li>
-						<a href="/" target="_blank" rel="noopener noreferrer">
+						<a href="/">
 							Contact
 						</a>
 					</li>

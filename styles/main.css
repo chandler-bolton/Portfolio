@@ -484,3 +484,34 @@ header .homeLink {
   justify-content: center;
   width: 100%;
 }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .navGirdItem {
+    grid-area: auto;
+  }
+
+  .navGirdItemLeft,
+  .navGirdItemMiddle,
+  .navGirdItemRight {
+    grid-area: auto;
+  }
+
+  .naviItems {
+    flex-direction: column;
+  }
+
+  .skillsContainer parent {
+    flex-direction: column;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+}
