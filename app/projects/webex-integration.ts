@@ -4,6 +4,7 @@ export type ProjectSection = {
 };
 
 export type ProjectCaseStudy = {
+  slug: string;
   title: string;
   subtitle: string;
   summary: string;
@@ -15,6 +16,7 @@ export type ProjectCaseStudy = {
 };
 
 export const webexHubSpotProject: ProjectCaseStudy = {
+  slug: "webex-integration",
   title: "WebEx Events ↔ HubSpot Integration Platform",
 
   subtitle:
