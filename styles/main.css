@@ -506,12 +506,52 @@ header .homeLink {
     flex-direction: column;
   }
 
-  .skillsContainer parent {
+  .skillsContainer.parent {
     flex-direction: column;
+  }
+
+  .skillContainer {
+    width: 100%;
   }
 
   .hero {
     flex-direction: column;
+    border: 1px solid var(--bg-secondary);
+    border-radius: var(--border-radius);
   }
+
+  .hero-left,
+  .hero-right {
+    /* width: 100%; */
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .hero-left, .hero-right {
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
+    align-items: center;
+    text-align: center !important;
+  }
+
+  .hero-left {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+  }
+
+  .hero-right {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+
+  .rightAlign {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+
 
 }
