@@ -23,7 +23,7 @@ export const webexHubSpotProject: ProjectCaseStudy = {
   subtitle:
     "Cloud-based integration system synchronizing WebEx Events (GraphQL) with HubSpot (REST) using AWS infrastructure",
 
-  featured: true,
+  featured: false,
 
   summary:
     "Designed, developed, and maintained a cloud-based integration platform that synchronized data between WebEx Events (GraphQL) and HubSpot (REST) using AWS infrastructure. Served as the sole developer and backend architecture designer, responsible for building and maintaining the full synchronization system, including infrastructure, pipelines, reliability systems, and client-facing documentation.",

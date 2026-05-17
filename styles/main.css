@@ -21,6 +21,10 @@
   --code-text: #C7D2FE;         /* optional: inline code / tech terms */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Debug Styles */
 .debug {
   border: 1px solid red;
@@ -30,32 +34,56 @@
   border: 1px solid blue;
 }
 
-.debug .blue {
-  border: 1px solid blue;
-}
-
-.debug .green {
+.debug.green {
   border: 1px solid green;
 }
 
-.debug .gold {
+.debug.gold {
   border: 1px solid gold;
 }
 
-.debug .purple {
+.debug.purple {
   border: 1px solid purple;
 }
 
-.debug .orange {
+.debug.orange {
   border: 1px solid orange;
 }
 
-.debug .dotted {
+.debug.dotted {
   border: 1px dotted red;
 }
 
-.debug .dashed {
+.debug.dashed {
   border: 1px dashed red;
+}
+
+.debug.dashed.gold {
+  border: 1px dashed gold;
+}
+
+.debug.dashed.blue {
+  border: 1px dashed blue;
+}
+
+.debug.dashed.green {
+  border: 1px dashed green;
+}
+
+.debug.dotted {
+  border: 1px dotted red;
+}
+
+.debug.dotted.gold {
+  border: 1px dotted gold;
+}
+
+.debug.dotted.blue {
+  border: 1px dotted blue;
+}
+
+.debug.dotted.green {
+  border: 1px dotted green;
 }
 
 /* Global Styles */
@@ -83,7 +111,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-bottom: 0.5rem;
   align-items: start;
   justify-content: start;
@@ -91,7 +119,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: var(--text-primary);
 }
@@ -153,45 +181,53 @@ li.sublist {
 
 /* Hero Styles */
 
-/* .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 3rem;
-} */
-
 .hero {
   display: flex;
   flex-direction: row;
-  max-width: 100%;
+  max-width: 90%;
   align-items: stretch;
   justify-content: center;
   margin-bottom: 3rem;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
 }
 
 .hero-left {
-  padding-left: 5%;
+  padding-left: 10%;
   width: 50%;
   background-color: var(--bg-secondary);
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
 }
 
 .hero-right {
-  padding-right: 5%;
+  padding-right: 10%;
   text-align: right;
   width: 50%;
   background-color: var(--bg-secondary);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   justify-content: center;
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
 }
 
 /* Module Styles */
+
+.projectHeader {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.overview {
+  margin-bottom: 2rem;
+}
 
 .aboutSummary {
   color: var(--text-secondary);
@@ -279,7 +315,7 @@ li.sublist {
 /* Skills Section */
 .skillsList {
   background-color: var(--bg-secondary);
-  border: 1px solid var(--bg-secondary);
+  border: 1px solid var(--border);
   border-radius: var(--border-radius);
   list-style: none;
   padding: 1rem 2rem;
@@ -347,9 +383,18 @@ li.sublist {
 
 /* Project Listing Cards */
 .projectGrid {
-  display: grid;
-  gap: 1.5rem;
-  justify-content: center;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.projectGrid.equalize {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .projectListingCard {
@@ -370,6 +415,14 @@ li.sublist {
 
 .projectListingCard p {
   color: var(--text-secondary);
+}
+
+/* Profile Picture */
+.profilePic {
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Footer Styles */
@@ -516,8 +569,9 @@ header .homeLink {
 
   .hero {
     flex-direction: column;
-    border: 1px solid var(--bg-secondary);
-    border-radius: var(--border-radius);
+    /* border: 1px solid var(--bg-secondary);
+    border-radius: var(--border-radius); */
+    border: none;
   }
 
   .hero-left,
@@ -539,11 +593,19 @@ header .homeLink {
   .hero-left {
     border-top-left-radius: var(--border-radius);
     border-top-right-radius: var(--border-radius);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-color: var(--border);
+    border-width: 1px 1px 0px 1px;
   }
 
   .hero-right {
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-color: var(--border);
+    border-width: 0px 1px 1px 1px;
   }
 
   .rightAlign {
@@ -552,6 +614,19 @@ header .homeLink {
     justify-content: center;
   }
 
+  .navGirdItemLeft, .navGirdItemRight {
+    display: none;
+  }
+
+  .navGrid {
+    grid-template-rows: repeat(1, 0.5fr);
+  }
+
+  .overview .textContainer {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 
 
 }

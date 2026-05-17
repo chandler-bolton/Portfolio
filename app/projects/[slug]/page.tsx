@@ -35,7 +35,7 @@ export default async function ProjectPage({ params }: Props) {
 
       <div className="main">
 
-        <section className="textContainer leftAlign">
+        <section className="textContainer projectHeader">
           <h1>{project.title}</h1>
           <p className=""><i>{project.subtitle}</i></p>
 
@@ -43,25 +43,34 @@ export default async function ProjectPage({ params }: Props) {
 
           <div className="divider"></div>
 
-          <section className="textContainer buffer leftAlign">
+        {/* ───── Overview Section ─────  */}
+          <section className="textContainer buffer overview">
             <h2>Overview</h2>
-            <p>{project.summary}</p>
+            <p className="textContainer leftAlign">{project.summary}</p>
           </section>
         
 
+        {/* ───── Responsibilities Section ─────  */}
+        <div className="divider"></div>
         <section className="textContainer leftAlign">
           <h2>Responsibilities</h2>
-          <ul>
+
+          <div className="textContainer leftAlign">
+          <ul >
             {project.responsibilities.map((item, i) => (
               <li className="square" key={i}>{item}</li>
             ))}
           </ul>
+          </div>
         </section>
 
+        {/* ───── Challenges Section ─────  */}
+        <div className="divider"></div>
         <section className="textContainer buffer leftAlign">
           <h2>Challenges</h2>
+
           {project.challenges.map((group, i) => (
-            <div key={i}>
+            <div className="textContainer leftAlign" key={i}>
               <h3>{group.title}</h3>
               <ul>
                 {group.items.map((item, j) => (
@@ -72,27 +81,39 @@ export default async function ProjectPage({ params }: Props) {
           ))}
         </section>
 
+        {/* ───── Solutions Section ─────  */}
+        <div className="divider"></div>
         <section className="textContainer buffer leftAlign">
           <h2>Solutions</h2>
-          <ul>
-            {project.solutions.map((s, i) => (
-              <li className="square" key={i}>{s}</li>
-            ))}
-          </ul>
+
+          <div className="textContainer leftAlign">
+            <ul>
+              {project.solutions.map((s, i) => (
+                <li className="square" key={i}>{s}</li>
+              ))}
+            </ul>
+          </div>
         </section>
 
+        {/* ───── Results Section ─────  */}
+        <div className="divider"></div>
         <section className="textContainer buffer leftAlign">
           <h2>Results</h2>
-          <ul>
-            {project.results.map((r, i) => (
-              <li className="square" key={i}>{r}</li>
-            ))}
-          </ul>
+
+          <div className="textContainer leftAlign">
+            <ul>
+              {project.results.map((r, i) => (
+                <li className="square" key={i}>{r}</li>
+              ))}
+            </ul>
+          </div>
         </section>
 
+        {/* ───── Tech Stack Section ─────  */}
+        <div className="divider"></div>
         <section className="textContainer buffer leftAlign">
           <h2>Tech Stack</h2>
-          <p>{project.techStack.join(" • ")}</p>
+          <p className="textContainer leftAlign">{project.techStack.join(" • ")}</p>
         </section>
 
       </div>

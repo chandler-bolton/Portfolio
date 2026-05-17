@@ -11,7 +11,7 @@ export default function Header() {
   const isHome = pathname === "/";
 
   return (
-	<header className="header">
+	<header className="header" id="header">
 		{/* ───── Header Section ───── */}
 		<nav>
 			<div className="navGrid">
@@ -22,17 +22,17 @@ export default function Header() {
 				<div className="navGirdItemMiddle">
 					<ul className="textContainer naviItems">
 					<li>
-						<a href="/">
+						<a href="/" target="_self">
 							Home
 						</a>
 					</li>
 					<li>
-						<a href="/projects">
+						<a href="/projects" target="_self">
 							Projects
 						</a>
 					</li>
 					<li>
-						<a href="/">
+						<a href="#contact" target="_self">
 							Contact
 						</a>
 					</li>

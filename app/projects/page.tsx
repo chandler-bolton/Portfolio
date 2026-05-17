@@ -16,9 +16,9 @@ export default function ProjectsPage() {
 
 			<div className="divider flushedTop"></div>
 
-
-			<div className="projectGrid textContainer">
+			<div className="projectGrid equalize textContainer">
 				{projects.map((project) => (
+
 					<Link
 						key={project.slug}
 						href={`/projects/${project.slug}`}
@@ -34,6 +34,8 @@ export default function ProjectsPage() {
 						{project.techStack.join(" • ")}
 						</div>
 					</Link>
+
+
 				))}
 			</div>
 

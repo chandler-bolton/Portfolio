@@ -5,27 +5,34 @@ import "@/styles/main.css";
 import { projects } from "@/content/projects";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import Image from "next/image";
 
 export default function Home() {
-  	const featuredProjects = projects.slice(0, 3); // Get the first 3 projects as featured
+  	console.log(`Available Images: ${JSON.stringify(Image)}`);
+	const featuredProjects = projects.filter(project => project.featured);
 	return ( 
 		<main>
 			<Header />
 
 			<div className="main">
 
+				<div className="buffer"></div>
+
+				<h1 className="buffer textContainer">Portfolio ─ Chandler Bolton</h1>
+
 				{/* ───── Hero Section ───── */}
 				<section className="hero buffer">
 
 						<div className="hero-left">
 							{/* <img src="/profile-pic.jpg" alt="Profile Picture" className="profilePic"/> */}
-							<h1>
-								Chandler Bolton
-							</h1>
-
+							<Image src="/images/profile-pic.jpg" alt="Profile Picture" width={300} height={300} className="profilePic" loading="eager"/>
 							<h2>
-								Cloud & Integrations Engineer
+								Chandler Bolton
 							</h2>
+
+							<h3>
+								Cloud & Integrations Engineer
+							</h3>
 						</div>
 
 						<div className="hero-right">
@@ -47,6 +54,8 @@ export default function Home() {
 					</div>
 				
 				</section>
+
+				<div className="divider"></div>
 
 					{/* ───── Featured Projects ─────  */}
 					<section className="textContainer buffer">

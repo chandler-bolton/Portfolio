@@ -5,7 +5,7 @@ import "@/styles/main.css";
 
 export default function Footer() {
   return (
-	<footer className="buffer footer">
+	<footer className="buffer footer" id="contact">
 	{/* ───── Footer Section ───── */}
 				<h2>
 					Links
@@ -25,6 +25,11 @@ export default function Footer() {
 					<li>
 						<a href="mailto:software.bolton@gmail.com" target="_blank" rel="noopener noreferrer">
 							Email
+						</a>
+					</li>
+					<li>
+						<a href="#header" target="_self">
+							 • Back to Top
 						</a>
 					</li>
 				</ul>
