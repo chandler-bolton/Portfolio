@@ -9,17 +9,27 @@ export type ProjectCaseStudy = {
   subtitle: string;
   featured?: boolean;
   summary: string;
+  overviewImage: { src: string; caption: string }[];
   responsibilities: string[];
   challenges: ProjectSection[];
   solutions: string[];
   results: string[];
   techStack: string[];
+  tags: string[];
 };
 
 export const leadOrchestrationProject: ProjectCaseStudy = {
   slug: "lead-workflow-orchestration",
 
   title: "Lead Qualification & Scheduling Orchestration Platform",
+
+  tags: [
+    "HubSpot",
+    "Workflow",
+    "Orchestration",
+    "Synchronization",
+    "Automation"
+  ],
 
   subtitle:
     "Custom orchestration and synchronization platform designed to resolve execution conflicts between third-party lead qualification and scheduling systems operating within HubSpot workflows.",
@@ -28,6 +38,8 @@ export const leadOrchestrationProject: ProjectCaseStudy = {
 
   summary:
     "Designed and developed a custom orchestration platform responsible for resolving execution conflicts between third-party lead qualification and meeting-scheduling systems integrated into HubSpot workflows. The client relied on two external platforms simultaneously: one responsible for filtering spam and fraudulent submissions, and another responsible for automated lead routing and meeting scheduling. The systems operated independently and continuously conflicted with one another while attempting to access and manipulate shared data simultaneously, resulting in race conditions, workflow bottlenecks, synchronization failures, and operational instability. After previous implementation efforts involving the vendors themselves were unable to resolve the issue, I was brought in to investigate the underlying system behavior, diagnose the execution conflicts, and architect a synchronization solution capable of coordinating workflow execution reliably and without interruption.",
+
+  overviewImage: [],
 
   responsibilities: [
     "Solution architecture and workflow orchestration design",

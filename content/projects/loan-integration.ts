@@ -9,16 +9,26 @@ export type ProjectCaseStudy = {
   subtitle: string;
   featured?: boolean;
   summary: string;
+  overviewImage: { src: string; caption: string }[];
   responsibilities: string[];
   challenges: ProjectSection[];
   solutions: string[];
   results: string[];
   techStack: string[];
+  tags: string[];
 };
 
 export const creditSystemsProject: ProjectCaseStudy = {
   slug: "loan-integration",
   title: "Credit App Center, CreditSmarts & Megasys ↔ HubSpot Integration Platform",
+
+  tags: [
+    "AWS",
+    "HubSpot",
+    "Integration",
+    "Cloud",
+    "Backend"
+  ],
 
   subtitle:
     "Enterprise cloud-based integration system for multi-platform synchronization using AWS and HubSpot APIs",
@@ -27,6 +37,8 @@ export const creditSystemsProject: ProjectCaseStudy = {
 
   summary:
     "Designed and maintained a cloud-based integration platform that synchronized data between Credit App Center, CreditSmarts, Megasys, and HubSpot using AWS infrastructure. Served as lead developer and backend architecture designer across the integration ecosystem, overseeing synchronization pipelines, infrastructure, data normalization, QA workflows, client coordination, and system reporting architecture. The system centralized reporting, normalized disparate workflows, and maintained synchronization integrity across independently-operating platforms.",
+
+  overviewImage: [],
 
   responsibilities: [
     "AWS infrastructure management",

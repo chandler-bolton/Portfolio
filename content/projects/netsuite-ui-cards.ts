@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export type ProjectSection = {
   title: string;
   items: string[];
@@ -9,17 +11,26 @@ export type ProjectCaseStudy = {
   subtitle: string;
   featured?: boolean;
   summary: string;
+  overviewImage: { src: string; caption: string }[];
   responsibilities: string[];
   challenges: ProjectSection[];
   solutions: string[];
   results: string[];
   techStack: string[];
+  tags: string[];
 };
 
 export const netsuiteUICardsProject: ProjectCaseStudy = {
   slug: "netsuite-ui-cards",
 
   title: "NetSuite UI Cards",
+  tags:[
+    "Images",
+    "UI",
+    "React",
+    "HubSpot",
+    "NetSuite"
+  ],
 
   subtitle:
     "React-based UI card components for HubSpot that centralized and visualized NetSuite data to improve data accessibility and enhance user experience.",
@@ -28,6 +39,12 @@ export const netsuiteUICardsProject: ProjectCaseStudy = {
 
   summary:
     "Served as the sole engineer responsible for designing and developing a suite of React-based UI card components for HubSpot that retrieved, processed, and displayed data from NetSuite to improve operational visibility, centralize reporting, and streamline user workflows. The UI cards were designed to be modular, reusable, and highly customizable, allowing flexible deployment across multiple HubSpot pages, workflows, and client-facing operational experiences. The project involved designing frontend architecture, backend data retrieval systems, synchronization logic, and user-focused workflows while coordinating directly with stakeholders to ensure the platform aligned with both technical and operational business requirements.",
+
+  overviewImage: [
+    { src: "/images/netsuite-ui-cards-all-cards.png", caption: "All cards with 'NetSuite' in the name were created by me" },
+    { src: "/images/netsuite-ui-cards-contract-lines.png", caption: "Contract lines card - conducts API calls to retrieve contract line data" },
+    { src: "/images/netsuite-ui-cards-financial-card.png", caption: "Financial card - displays key financial metrics and KPIs" }
+  ],
 
   responsibilities: [
     "React component architecture and frontend system design",

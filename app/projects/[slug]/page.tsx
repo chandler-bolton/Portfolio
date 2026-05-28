@@ -1,6 +1,7 @@
 import { projects } from "@/content/projects";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import "@/styles/main.css";
 
 import Footer from "@/components/footer";
@@ -39,6 +40,12 @@ export default async function ProjectPage({ params }: Props) {
           <h1>{project.title}</h1>
           <p className=""><i>{project.subtitle}</i></p>
 
+          <div className="tagParent">
+            {project.tags.map((tag, i) => (
+              <span key={i} id={`tag-${tag}`} className="tag">{tag}</span>
+            ))}
+          </div>
+
           </section>
 
           <div className="divider"></div>
@@ -48,7 +55,27 @@ export default async function ProjectPage({ params }: Props) {
             <h2>Overview</h2>
             <p className="textContainer leftAlign">{project.summary}</p>
           </section>
-        
+
+
+        {/* ───── Overview Image Section ─────  */}
+        {project.overviewImage && project.overviewImage.length > 0 && (
+          <div className="overviewImageContainer">
+            <section className="textContainer buffer overviewImage">
+              <Image src={project.overviewImage[0].src} alt={`${project.title} Overview`} layout="responsive" width={800} height={400}
+              />
+            </section>
+
+            {project.overviewImage.length > 1 && (
+              <section className="textContainer">
+                <p>{project.overviewImage[0].caption}</p>
+              </section>
+            )}
+
+            <section className="imageOverviewNote textContainer">
+              Confidential information redacted and replaced with placeholders
+            </section>
+          </div>
+        )}
 
         {/* ───── Responsibilities Section ─────  */}
         <div className="divider"></div>
@@ -108,6 +135,18 @@ export default async function ProjectPage({ params }: Props) {
             </ul>
           </div>
         </section>
+
+        {/* ───── Additional Images Section ─────  */}
+
+        {project.overviewImage.length > 1 && (
+          project.overviewImage.slice(1).map((image, i) => (
+            <section className="textContainer buffer overviewImage" key={i}>
+              <Image src={image.src} alt={`${project.title} Additional Image ${i + 1}`} layout="responsive" width={800} height={400} />
+              <div className="buffer flushedTop"/>
+              <p>{image.caption}</p>
+            </section>
+          ))
+        )}
 
         {/* ───── Tech Stack Section ─────  */}
         <div className="divider"></div>

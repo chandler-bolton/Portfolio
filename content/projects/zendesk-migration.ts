@@ -9,17 +9,27 @@ export type ProjectCaseStudy = {
   subtitle: string;
   featured?: boolean;
   summary: string;
+  overviewImage: { src: string; caption: string }[];
   responsibilities: string[];
   challenges: ProjectSection[];
   solutions: string[];
   results: string[];
   techStack: string[];
+  tags: string[];
 };
 
 export const zendeskMigrationProject: ProjectCaseStudy = {
   slug: "zendesk-hubspot-migration",
 
   title: "Zendesk → HubSpot Enterprise Data Migration",
+
+  tags: [
+    "Zendesk",
+    "HubSpot",
+    "Migration",
+    "Data",
+    "Integration"
+  ],
 
   subtitle:
     "Large-scale concurrent migration platform designed to transfer millions of records and properties from Zendesk into HubSpot with resilient synchronization, threading, and recovery systems.",
@@ -28,6 +38,8 @@ export const zendeskMigrationProject: ProjectCaseStudy = {
 
   summary:
     "Designed and developed a custom large-scale migration platform responsible for transferring Zendesk records, tickets, companies, contacts, and associated properties into HubSpot. The migration platform was fully custom engineered, including the synchronization logic, threading architecture, infrastructure, retry systems, data transformation pipelines, monitoring workflows, and recovery handling. The migration processed millions of records and tens of millions of properties continuously over multiple days while maintaining synchronization integrity, operational visibility, and recovery capabilities under aggressive API throughput constraints.",
+
+  overviewImage: [],
 
   responsibilities: [
     "Migration platform architecture and system design",

@@ -9,17 +9,27 @@ export type ProjectCaseStudy = {
   subtitle: string;
   featured?: boolean;
   summary: string;
+  overviewImage: { src: string; caption: string }[];
   responsibilities: string[];
   challenges: ProjectSection[];
   solutions: string[];
   results: string[];
   techStack: string[];
+  tags: string[];
 };
 
 export const commerceAutomationProject: ProjectCaseStudy = {
   slug: "commerce-workflow-automation",
 
   title: "Commerce Workflow & Quote Automation Platform",
+
+  tags: [
+    "HubSpot",
+    "Workflow",
+    "Automation",
+    "UI",
+    "Quote"
+  ],
 
   subtitle:
     "Custom HubSpot workflow automation and UI extension platform designed to support dynamic purchase-order generation, vendor-based order splitting, and interactive quote rendering with rich media support.",
@@ -28,6 +38,8 @@ export const commerceAutomationProject: ProjectCaseStudy = {
 
   summary:
     "Designed and developed a custom commerce workflow automation platform for a client migrating to HubSpot that required operational capabilities not natively supported by the platform. The project involved architecting a system capable of automatically transforming signed sales orders into dynamically-generated vendor-specific purchase orders, supporting image attachment and management at the line-item level, and extending HubSpot quote functionality to render interactive media-rich quote experiences. The solution required combining workflow automation, custom UI extensions, schema design, backend processing logic, frontend rendering systems, and quote-template engineering into a unified operational platform that integrated seamlessly into the client’s existing sales and fulfillment workflows.",
+
+  overviewImage: [],
 
   responsibilities: [
     "Solution architecture and platform extension design",

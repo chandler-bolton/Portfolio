@@ -86,6 +86,69 @@ html {
   border: 1px dotted green;
 }
 
+/* ID Styles */
+
+/* Tags */
+
+#tag-Images {
+  border-color: #DB2777 !important;
+}
+
+#tag-UI {
+  border-color: #6366F1 !important;
+}
+
+#tag-Backend {
+  border-color: #059669 !important;
+}
+
+#tag-Infrastructure {
+  border-color: #e9e9e9 !important;
+}
+
+#tag-API {
+  border-color: #EA580C !important;
+}
+
+#tag-Cloud {
+  border-color: #0284C7 !important;
+}
+
+#tag-AWS {
+  border-color: #FF9900 !important;
+}
+
+#tag-Zendesk {
+  border-color: #03363D !important;
+}
+
+#tag-Integration {
+  border-color: #2563EB !important;
+}
+
+#tag-HubSpot {
+  border-color: #FF7A59 !important;
+}
+
+#tag-Internal {
+  border-color: #475569 !important;
+}
+
+#tag-Migration {
+  border-color: #7C3AED !important;
+}
+
+#tag-React {
+  border-color: #0891B2 !important;
+}
+
+.tag {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 4px 6px;
+  margin: 2px 4px;
+}
+
 /* Global Styles */
 .main {
   display: flex;
@@ -218,6 +281,14 @@ li.sublist {
 }
 
 /* Module Styles */
+
+.tagParent {
+  padding: 12px ;
+}
+
+.imageOverviewNote {
+  font-style: italic;
+}
 
 .projectHeader {
   margin-top: 2rem;
@@ -381,6 +452,63 @@ li.sublist {
   color: var(--text-primary);
 }
 
+/* Project Sort Controls */
+.projectSortControls {
+  width: 80%;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.projectSortLabel {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.projectSortSelect {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projectSortSelect:hover,
+.projectSortSelect:focus {
+  border-color: var(--accent-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(77, 163, 255, 0.25);
+}
+
+.otherProjectsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1rem 0 0.5rem;
+}
+
+.otherProjectsHeading {
+  color: var(--text-primary);
+  margin: 0.25rem 0 0.25rem;
+}
+
+.otherProjectsSubtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.otherProjectsSubtitle em {
+  color: var(--text-secondary);
+  font-style: normal;
+}
+
 /* Project Listing Cards */
 .projectGrid {
   /* display: grid;
@@ -538,8 +666,262 @@ header .homeLink {
   width: 100%;
 }
 
+/* Mobile Drawer */
+.drawerToggle {
+  display: none;
+}
+
+.drawer {
+  display: none;
+}
+
+.drawerBackdrop {
+  display: none;
+}
+
+.expandableToggle {
+  display: none;
+}
+
+.expandable.collapsed .expandableContent,
+.expandable.expanded .expandableContent {
+  max-height: none;
+  overflow: visible;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
+  /* Drawer Toggle Button */
+  .drawerToggle {
+    display: flex;
+    position: fixed;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 1001;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .drawerToggle:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+  }
+
+  .drawerToggleIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Drawer Backdrop */
+  .drawerBackdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 999;
+    animation: drawerFadeIn 0.2s ease-out;
+  }
+
+  @keyframes drawerFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Drawer Panel */
+  .drawer {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(85vw, 360px);
+    background-color: var(--bg-secondary);
+    border-left: 1px solid var(--border);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 4.5rem 1.5rem 2rem;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .drawer.open {
+    transform: translateX(0);
+  }
+
+  .drawerSection {
+    margin-bottom: 2rem;
+  }
+
+  .drawerSection:last-child {
+    margin-bottom: 0;
+  }
+
+  .drawerHeading {
+    color: var(--accent-primary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .drawerList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .drawerList li {
+    margin: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .drawerList li:last-child {
+    border-bottom: none;
+  }
+
+  .drawerList a {
+    display: block;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    padding: 0.75rem 0.25rem;
+    text-decoration: none;
+  }
+
+  .drawerList a:hover {
+    color: var(--link-hover);
+    transform: none;
+  }
+
+  .drawerProjectList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .drawerProjectList li {
+    margin: 0;
+  }
+
+  .drawerProjectLink {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .drawerProjectLink:hover {
+    text-decoration: none;
+    transform: none;
+    border-color: var(--accent-primary);
+  }
+
+  .drawerProjectLink strong {
+    color: var(--accent-primary);
+    font-size: 1rem;
+  }
+
+  .drawerProjectLink span {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .drawerAllProjects {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--link);
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  /* Hide sections that moved into the drawer */
+  .featuredProjectsSection,
+  .viewAllProjects {
+    display: none;
+  }
+
+  /* Expandable Text — truncate on mobile */
+  .expandable {
+    position: relative;
+    width: 100%;
+  }
+
+  .expandable.collapsed .expandableContent {
+    position: relative;
+    max-height: calc(var(--clamp-lines, 4) * 1.7em);
+    overflow: hidden;
+  }
+
+  .expandable.collapsed .expandableContent::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3em;
+    background: linear-gradient(to bottom, transparent, var(--bg-secondary));
+    pointer-events: none;
+  }
+
+  /* Hero uses a different background; fade to that instead */
+  .hero .expandable.collapsed .expandableContent::after {
+    background: linear-gradient(to bottom, transparent, var(--bg-secondary));
+  }
+
+  /* The work/about sections sit on the primary background */
+  section:not(.hero) .expandable.collapsed .expandableContent::after {
+    background: linear-gradient(to bottom, transparent, var(--bg-primary));
+  }
+
+  .expandable.expanded .expandableContent {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .expandableToggle {
+    display: inline-block;
+    margin-top: 0.75rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    color: var(--accent-primary);
+    font-size: 0.95rem;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    align-self: center;
+  }
+
+  .expandableToggle:hover,
+  .expandableToggle:focus-visible {
+    border-color: var(--accent-primary);
+    outline: none;
+  }
+
+
   .navGrid {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);

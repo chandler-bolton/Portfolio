@@ -9,16 +9,26 @@ export type ProjectCaseStudy = {
   subtitle: string;
   featured?: boolean;
   summary: string;
+  overviewImage: { src: string; caption: string }[];
   responsibilities: string[];
   challenges: ProjectSection[];
   solutions: string[];
   results: string[];
   techStack: string[];
+  tags: string[];
 };
 
 export const webexHubSpotProject: ProjectCaseStudy = {
   slug: "webex-integration",
   title: "WebEx Events ↔ HubSpot Integration Platform",
+
+  tags: [
+    "AWS",
+    "HubSpot",
+    "Integration",
+    "Cloud",
+    "Backend"
+  ],
 
   subtitle:
     "Cloud-based integration system synchronizing WebEx Events (GraphQL) with HubSpot (REST) using AWS infrastructure",
@@ -27,6 +37,8 @@ export const webexHubSpotProject: ProjectCaseStudy = {
 
   summary:
     "Designed, developed, and maintained a cloud-based integration platform that synchronized data between WebEx Events (GraphQL) and HubSpot (REST) using AWS infrastructure. Served as the sole developer and backend architecture designer, responsible for building and maintaining the full synchronization system, including infrastructure, pipelines, reliability systems, and client-facing documentation.",
+
+  overviewImage: [],
 
   responsibilities: [
     "AWS infrastructure management",
