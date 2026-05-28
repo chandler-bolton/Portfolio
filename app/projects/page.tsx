@@ -23,6 +23,8 @@ function renderProjectCard(project: ProjectCaseStudy) {
 
       <p>{project.subtitle}</p>
 
+      <div className="buffer"></div>
+
       <div>{project.techStack.join(" • ")}</div>
 
       {/* ───── Tags ───── */}

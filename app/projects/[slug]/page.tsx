@@ -2,6 +2,7 @@ import { projects } from "@/content/projects";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import ExpandableText from "@/components/expandable-text";
 import "@/styles/main.css";
 
 import Footer from "@/components/footer";
@@ -53,7 +54,9 @@ export default async function ProjectPage({ params }: Props) {
         {/* ───── Overview Section ─────  */}
           <section className="textContainer buffer overview">
             <h2>Overview</h2>
-            <p className="textContainer leftAlign">{project.summary}</p>
+            <ExpandableText lines={6}>
+              <p className="textContainer leftAlign">{project.summary}</p>
+            </ExpandableText>
           </section>
 
 
@@ -83,29 +86,34 @@ export default async function ProjectPage({ params }: Props) {
           <h2>Responsibilities</h2>
 
           <div className="textContainer leftAlign">
-          <ul >
-            {project.responsibilities.map((item, i) => (
-              <li className="square" key={i}>{item}</li>
-            ))}
-          </ul>
-          </div>
-        </section>
+            <ExpandableText lines={5}>
+              <ul >
+                {project.responsibilities.map((item, i) => (
+                  <li className="square" key={i}>{item}</li>
+                ))}
+              </ul>
+              </ExpandableText>
+            </div>
+          </section>
 
         {/* ───── Challenges Section ─────  */}
         <div className="divider"></div>
         <section className="textContainer buffer leftAlign">
           <h2>Challenges</h2>
 
-          {project.challenges.map((group, i) => (
-            <div className="textContainer leftAlign" key={i}>
-              <h3>{group.title}</h3>
-              <ul>
-                {group.items.map((item, j) => (
-                  <li className="square" key={j}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <ExpandableText lines={5}>
+            {project.challenges.map((group, i) => (
+              <div className="textContainer leftAlign" key={i}>
+                <h3>{group.title}</h3>
+                <ul>
+                  {group.items.map((item, j) => (
+                    <li className="square" key={j}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </ExpandableText>
+
         </section>
 
         {/* ───── Solutions Section ─────  */}
@@ -113,19 +121,24 @@ export default async function ProjectPage({ params }: Props) {
         <section className="textContainer buffer leftAlign">
           <h2>Solutions</h2>
 
-          <div className="textContainer leftAlign">
-            <ul>
-              {project.solutions.map((s, i) => (
-                <li className="square" key={i}>{s}</li>
-              ))}
-            </ul>
-          </div>
+          <ExpandableText lines={5}>
+
+            <div className="textContainer leftAlign">
+              <ul>
+                {project.solutions.map((s, i) => (
+                  <li className="square" key={i}>{s}</li>
+                ))}
+              </ul>
+            </div>
+          </ExpandableText>
         </section>
 
         {/* ───── Results Section ─────  */}
         <div className="divider"></div>
         <section className="textContainer buffer leftAlign">
           <h2>Results</h2>
+
+          <ExpandableText lines={5}>
 
           <div className="textContainer leftAlign">
             <ul>
@@ -134,6 +147,7 @@ export default async function ProjectPage({ params }: Props) {
               ))}
             </ul>
           </div>
+          </ExpandableText>
         </section>
 
         {/* ───── Additional Images Section ─────  */}
@@ -147,6 +161,8 @@ export default async function ProjectPage({ params }: Props) {
             </section>
           ))
         )}
+
+        
 
         {/* ───── Tech Stack Section ─────  */}
         <div className="divider"></div>

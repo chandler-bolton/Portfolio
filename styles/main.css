@@ -284,6 +284,8 @@ li.sublist {
 
 .tagParent {
   padding: 12px ;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .imageOverviewNote {
@@ -1008,6 +1010,19 @@ header .homeLink {
     text-align: center !important;
     align-items: center !important;
     justify-content: center !important;
+  }
+
+  .tagParent {
+    padding: 12px ;
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center !important;
+  }
+
+  .mobileHidden {
+    display: none !important;
   }
 
 

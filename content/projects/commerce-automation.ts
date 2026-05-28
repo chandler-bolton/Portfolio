@@ -28,7 +28,7 @@ export const commerceAutomationProject: ProjectCaseStudy = {
     "Workflow",
     "Automation",
     "UI",
-    "Quote"
+    "React"
   ],
 
   subtitle:

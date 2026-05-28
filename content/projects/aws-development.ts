@@ -24,9 +24,8 @@ export const awsInfrastructureProject: ProjectCaseStudy = {
 
   tags: [
     "AWS",
-    "Cloud",
     "Infrastructure",
-    "Internal",
+    "Cloud",
     "Backend"
   ],
 

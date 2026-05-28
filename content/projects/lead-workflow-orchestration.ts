@@ -26,7 +26,6 @@ export const leadOrchestrationProject: ProjectCaseStudy = {
   tags: [
     "HubSpot",
     "Workflow",
-    "Orchestration",
     "Synchronization",
     "Automation"
   ],

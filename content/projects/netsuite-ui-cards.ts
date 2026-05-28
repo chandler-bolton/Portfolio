@@ -29,7 +29,7 @@ export const netsuiteUICardsProject: ProjectCaseStudy = {
     "UI",
     "React",
     "HubSpot",
-    "NetSuite"
+    "Synchronization",
   ],
 
   subtitle:

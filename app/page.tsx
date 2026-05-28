@@ -5,42 +5,15 @@ import "@/styles/main.css";
 import { projects } from "@/content/projects";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import MobileDrawer from "@/components/mobile-drawer";
 import ExpandableText from "@/components/expandable-text";
 import Image from "next/image";
 
 export default function Home() {
 	const featuredProjects = projects.filter(project => project.featured);
 
-	const drawerNavLinks = [
-		{ href: "/", label: "Home" },
-		{ href: "/projects", label: "Projects" },
-		{ href: "#contact", label: "Contact" },
-	];
-
-	const drawerJumpLinks = [
-		{ href: "#hero", label: "Intro" },
-		{ href: "#featured-projects", label: "Featured Projects" },
-		{ href: "#skills", label: "Technical Skills" },
-		{ href: "#work", label: "What I Work On" },
-		{ href: "#about", label: "About Me" },
-	];
-
-	const drawerProjects = featuredProjects.map(project => ({
-		slug: project.slug,
-		title: project.title,
-		subtitle: project.subtitle,
-	}));
-
 	return (
 		<main>
 			<Header />
-
-			<MobileDrawer
-				navLinks={drawerNavLinks}
-				jumpLinks={drawerJumpLinks}
-				featuredProjects={drawerProjects}
-			/>
 
 			<div className="main">
 

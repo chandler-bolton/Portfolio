@@ -24,10 +24,9 @@ export const zendeskMigrationProject: ProjectCaseStudy = {
   title: "Zendesk → HubSpot Enterprise Data Migration",
 
   tags: [
-    "Zendesk",
     "HubSpot",
     "Migration",
-    "Data",
+    "Synchronization",
     "Integration"
   ],
 
