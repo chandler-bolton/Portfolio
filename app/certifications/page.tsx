@@ -51,8 +51,8 @@ export default function Home() {
 							Featured
 						</h2>
 
-						<div className="featuredCertifications">
 							<ExpandableText lines={20}>
+						<div className="featuredCertifications">
 							{(() => {
 								const featuredCerts = CERTIFICATIONS.filter(cert => cert.featured);
 								return featuredCerts.map((cert, i) => {
@@ -71,8 +71,8 @@ export default function Home() {
 									);
 								});
 							})()}
-							</ExpandableText>
 						</div>
+							</ExpandableText>
 					</section>
 
 					<div className="divider"></div>

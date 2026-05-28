@@ -96,14 +96,14 @@ export default function Home() {
 						<div className="divider thin"></div>
 
 						<ExpandableText lines={10} className="skillsContainer parent">
-							<ul className="skillsList">
+							<ul className="skillsList first">
 								<li className="square">Frontend & Backend Development</li>
 								<li className="square">AWS & Cloud Infrastructure</li>
 								<li className="square">API Integrations & Synchronization Systems</li>
 								<li className="square">REST & GraphQL Architectures</li>
 								<li className="square">Distributed Data Pipelines</li>
 							</ul>
-							<ul className="skillsList">
+							<ul className="skillsList second">
 								<li className="square">Database & Data Integrity Systems</li>
 								<li className="square">System Architecture & Platform Design</li>
 								<li className="square">DevOps, Monitoring & Operational Tooling</li>

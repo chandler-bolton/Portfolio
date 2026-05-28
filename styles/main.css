@@ -750,6 +750,48 @@ header .homeLink {
   overflow: visible;
 }
 
+/* Desktop Styles */
+/* @media (min-width: 769px) {
+  .drawerToggle {
+    display: none;
+  }
+
+  .drawer {
+    display: none;
+  }
+
+  .drawerBackdrop {
+    display: none;
+  }
+
+  .expandableToggle {
+    display: none;
+  } */
+
+  /* .certificationCard:hover, .certificationList li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .projectCard:hover {
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+  .projectSortSelect:hover, .projectSortSelect:focus {
+    border-color: var(--accent-primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(77, 163, 255, 0.25);
+  }
+  .projectListingCard:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  } */
+/* } */
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   /* Drawer Toggle Button */
@@ -1086,21 +1128,47 @@ header .homeLink {
 
   .featuredCertifications, .certificationList {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 
-  .certificationCard {
+  .certificationCard, .certificationList li {
     width: 100%;
     margin-top: 1rem;
   }
 
-  /* .skillsList.first{
+  .certificationList li {
+    margin-bottom: 0 !important;
+  }
+
+  .certificationCard:hover, .certificationList li:hover, .projectCard:hover, .projectSortSelect:hover, .projectSortSelect:focus, .projectListingCard:hover {
+    box-shadow: none;
+    transform: none;
+    transition: none;
+  }
+
+  .skillsContainer.parent .expandableContent {
+    gap: 0;
+  }
+
+  .skillsList li {
+    list-style-type: none;
+  }
+
+
+  .skillsList.first{
+    margin-bottom: 0;
     border-bottom: none;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
   }
 
   .skillsList.second {
+    margin-top: 0;
     border-top: none ;
     border-radius: 0 0 var(--border-radius) var(--border-radius) ;
-  } */
+  }
+
+  .featuredProjects, .projectGrid {
+    gap: 1rem;
+  }
 
 }
