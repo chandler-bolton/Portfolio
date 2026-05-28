@@ -362,6 +362,11 @@ li.sublist {
   margin-bottom: 0 !important;
 }
 
+.smallBuffer {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
 .homeLink {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -386,7 +391,7 @@ li.sublist {
 }
 
 /* Skills Section */
-.skillsList {
+.skillsList, .expandableContent .skillsList {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
@@ -397,7 +402,7 @@ li.sublist {
   flex-wrap: wrap;
   gap: 1rem;
 }
-.skillsList li {
+.skillsList li, .expandableContent .skillsList li {
   padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--border);
   color: var(--text-primary);
@@ -412,13 +417,67 @@ li.sublist {
   width: 100%;
 }
 
-.skillsContainer.parent {
+.skillsContainer.parent .expandableContent {
   display: flex;
   flex-direction: row;
   align-items: start;
   gap: 2rem;
   justify-content: center;
 }
+
+/* Certifications Section */
+
+.featuredCertifications {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.certificationCard {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.3s ease;
+  background-color: var(--bg-secondary);
+}
+
+.certificationCard:hover, .certificationList li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificationCard.last {
+  grid-column: 1 / -1;
+}
+
+.certificationCard .skills, .certificationList .skills {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.certificationList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 0;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.certificationList li {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+
 
 /* Project + Project Cards */
 .featuredProjects { 
@@ -861,7 +920,6 @@ header .homeLink {
   }
 
   /* Hide sections that moved into the drawer */
-  .featuredProjectsSection,
   .viewAllProjects {
     display: none;
   }
@@ -943,8 +1001,9 @@ header .homeLink {
     flex-direction: column;
   }
 
-  .skillsContainer.parent {
+  .skillsContainer.parent .expandableContent {
     flex-direction: column;
+    justify-content: flex-start;
   }
 
   .skillContainer {
@@ -1025,5 +1084,23 @@ header .homeLink {
     display: none !important;
   }
 
+  .featuredCertifications, .certificationList {
+    grid-template-columns: 1fr;
+  }
+
+  .certificationCard {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* .skillsList.first{
+    border-bottom: none;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+
+  .skillsList.second {
+    border-top: none ;
+    border-radius: 0 0 var(--border-radius) var(--border-radius) ;
+  } */
 
 }

@@ -7,9 +7,10 @@ import "@/styles/main.css";
 import MobileDrawer from "@/components/mobile-drawer";
 
 const NAV_LINKS = [
-	{ href: "/#header", label: "Home" },
-	{ href: "/projects", label: "Projects" },
-	{ href: "#contact", label: "Contact" },
+	{ href: "/#header", label: "Home", headerDisplay: true },
+	{ href: "/projects", label: "Projects", headerDisplay: true },
+	{ href: "/certifications", label: "Certifications", headerDisplay: true },
+	{ href: "#contact", label: "Contact", headerDisplay: true },
 ];
 
 const HOME_JUMP_LINKS = [
@@ -20,11 +21,17 @@ const HOME_JUMP_LINKS = [
 	{ href: "/#about", label: "About Me" },
 ];
 
+const JUMP_LINKS = [
+	{ href: "#header", label: "Back to Top" },
+]
+
+
+
 export default function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
-  const drawerJumpLinks = isHome ? HOME_JUMP_LINKS : [];
+  const drawerJumpLinks = isHome ? [...HOME_JUMP_LINKS, ...JUMP_LINKS] : [...JUMP_LINKS];
 
   const drawerProjects = projects
 	.filter((project) => project.featured)
@@ -40,31 +47,20 @@ export default function Header() {
 			{/* ───── Header Section ───── */}
 			<nav>
 				<div className="navGrid">
-					<div className="navGirdItemLeft">
-
-					</div>
+					<div className="navGirdItemLeft"></div>
 
 					<div className="navGirdItemMiddle">
-						<ul className="textContainer naviItems">
-						<li>
-							<a href="/" target="_self">
-								Home
-							</a>
-						</li>
-						<li>
-							<a href="/projects" target="_self">
-								Projects
-							</a>
-						</li>
-						<li>
-							<a href="#contact" target="_self">
-								Contact
-							</a>
-						</li>
-					</ul>
-					</div>
 
-					<div className="navGirdItemRight"></div>
+						<ul className="textContainer naviItems">
+						{NAV_LINKS.filter(link => link.headerDisplay).map((link) => (
+							<li key={link.href}>
+								<a href={link.href} target="_self">
+									{link.label}
+								</a>
+							</li>
+						))}
+						</ul>
+					</div>
 				</div>
 			</nav>
 		</header>

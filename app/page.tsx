@@ -66,14 +66,16 @@ export default function Home() {
 							Featured Projects
 						</h2>
 
-						<div className="featuredProjects">
-							{featuredProjects.map((project) => (
-								<Link key={project.slug} href={`/projects/${project.slug}`} className="projectCard">
-									<h3>{project.title}</h3>
-									<p>{project.subtitle}</p>
-								</Link>
-							))}
-						</div>
+						<ExpandableText lines={10}>
+							<div className="featuredProjects">
+								{featuredProjects.map((project) => (
+									<Link key={project.slug} href={`/projects/${project.slug}`} className="projectCard">
+										<h3>{project.title}</h3>
+										<p>{project.subtitle}</p>
+									</Link>
+								))}
+							</div>
+						</ExpandableText>
 					</section>
 
 					{/* ───── View All Projects ───── */}
@@ -93,7 +95,7 @@ export default function Home() {
 
 						<div className="divider thin"></div>
 
-						<div className="skillsContainer parent">
+						<ExpandableText lines={10} className="skillsContainer parent">
 							<ul className="skillsList">
 								<li className="square">Frontend & Backend Development</li>
 								<li className="square">AWS & Cloud Infrastructure</li>
@@ -108,8 +110,7 @@ export default function Home() {
 								<li className="square">Technical Documentation & Client Communication</li>
 								<li className="square">Python | JavaScript | TypeScript | React | Node.js</li>
 							</ul>
-
-						</div>
+						</ExpandableText>
 
 					</div>
 
