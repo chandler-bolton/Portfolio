@@ -54,7 +54,7 @@ export default async function ProjectPage({ params }: Props) {
         {/* ───── Overview Section ─────  */}
           <section className="textContainer buffer overview">
             <h2>Overview</h2>
-            <ExpandableText lines={6}>
+            <ExpandableText lines={12}>
               <p className="textContainer leftAlign">{project.summary}</p>
             </ExpandableText>
           </section>
@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }: Props) {
           <h2>Responsibilities</h2>
 
           <div className="textContainer leftAlign">
-            <ExpandableText lines={5}>
+            <ExpandableText lines={6}>
               <ul >
                 {project.responsibilities.map((item, i) => (
                   <li className="square" key={i}>{item}</li>
@@ -101,7 +101,7 @@ export default async function ProjectPage({ params }: Props) {
         <section className="textContainer buffer leftAlign">
           <h2>Challenges</h2>
 
-          <ExpandableText lines={5}>
+          <ExpandableText lines={10}>
             {project.challenges.map((group, i) => (
               <div className="textContainer leftAlign" key={i}>
                 <h3>{group.title}</h3>

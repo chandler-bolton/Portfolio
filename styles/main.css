@@ -250,6 +250,7 @@ li.sublist {
   max-width: 90%;
   align-items: stretch;
   justify-content: center;
+  margin: 0 auto;
   margin-bottom: 3rem;
   border: 1px solid var(--border);
   border-radius: var(--border-radius);
@@ -265,6 +266,7 @@ li.sublist {
   justify-content: center;
   border-top-left-radius: var(--border-radius);
   border-bottom-left-radius: var(--border-radius);
+  padding-bottom: 2rem;
 }
 
 .hero-right {
@@ -961,24 +963,29 @@ header .homeLink {
     padding: 0.5rem;
   }
 
-  /* Hide sections that moved into the drawer */
-  .viewAllProjects {
-    display: none;
-  }
-
   /* Expandable Text — truncate on mobile */
   .expandable {
     position: relative;
     width: 100%;
   }
 
-  .expandable.collapsed .expandableContent {
+  .expandable.collapsed .expandableContent,
+  .expandable.expanded .expandableContent {
     position: relative;
-    max-height: calc(var(--clamp-lines, 4) * 1.7em);
     overflow: hidden;
+    transition: max-height 0.6s ease;
   }
 
-  .expandable.collapsed .expandableContent::after {
+  .expandable.collapsed .expandableContent {
+    max-height: calc(var(--clamp-lines, 4) * 1.7em);
+  }
+
+  .expandable.expanded .expandableContent {
+    max-height: 425vh;
+  }
+
+  .expandable.collapsed .expandableContent::after,
+  .expandable.expanded .expandableContent::after {
     content: "";
     position: absolute;
     left: 0;
@@ -987,21 +994,24 @@ header .homeLink {
     height: 3em;
     background: linear-gradient(to bottom, transparent, var(--bg-secondary));
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .expandable.collapsed .expandableContent::after {
+    opacity: 1;
   }
 
   /* Hero uses a different background; fade to that instead */
-  .hero .expandable.collapsed .expandableContent::after {
+  .hero .expandable.collapsed .expandableContent::after,
+  .hero .expandable.expanded .expandableContent::after {
     background: linear-gradient(to bottom, transparent, var(--bg-secondary));
   }
 
   /* The work/about sections sit on the primary background */
-  section:not(.hero) .expandable.collapsed .expandableContent::after {
+  section:not(.hero) .expandable.collapsed .expandableContent::after,
+  section:not(.hero) .expandable.expanded .expandableContent::after {
     background: linear-gradient(to bottom, transparent, var(--bg-primary));
-  }
-
-  .expandable.expanded .expandableContent {
-    max-height: none;
-    overflow: visible;
   }
 
   .expandableToggle {
@@ -1061,8 +1071,7 @@ header .homeLink {
 
   .hero-left,
   .hero-right {
-    /* width: 100%; */
-    padding: 2rem;
+    padding: 0rem 2rem 0rem 2rem;
     text-align: center;
   }
 

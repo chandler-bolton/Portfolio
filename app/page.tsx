@@ -22,6 +22,7 @@ export default function Home() {
 				<h1 className="buffer textContainer">Portfolio ─ Chandler Bolton</h1>
 
 				{/* ───── Hero Section ───── */}
+				<div className="hero-parent">
 				<section id="hero" className="hero buffer">
 
 						<div className="hero-left">
@@ -38,7 +39,7 @@ export default function Home() {
 						<div className="hero-right">
 
 							<div className="textContainer rightAlign">
-								<ExpandableText lines={3} className="heroIntro">
+								<ExpandableText lines={6} className="heroIntro">
 									<p className="buffer">
 										I'm a Cloud & Integrations Engineer with a passion for building scalable and efficient solutions.
 									</p>
@@ -56,6 +57,7 @@ export default function Home() {
 					</div>
 
 				</section>
+				</div>
 
 				<div className="divider"></div>
 
@@ -66,7 +68,7 @@ export default function Home() {
 							Featured Projects
 						</h2>
 
-						<ExpandableText lines={10}>
+						<ExpandableText lines={14}>
 							<div className="featuredProjects">
 								{featuredProjects.map((project) => (
 									<Link key={project.slug} href={`/projects/${project.slug}`} className="projectCard">
@@ -95,7 +97,7 @@ export default function Home() {
 
 						<div className="divider thin"></div>
 
-						<ExpandableText lines={10} className="skillsContainer parent">
+						<ExpandableText lines={12} className="skillsContainer parent">
 							<ul className="skillsList first">
 								<li className="square">Frontend & Backend Development</li>
 								<li className="square">AWS & Cloud Infrastructure</li>
@@ -119,7 +121,7 @@ export default function Home() {
 
 				{/* ───── About / Summary Section ───── */}
 				<section id="work" className="textContainer">
-					<h2>
+					{/* <h2>
 						What I Work On
 					</h2>
 
@@ -140,10 +142,10 @@ export default function Home() {
 						</p>
 					</ExpandableText>
 
-					<div className="divider thin"></div>
+					<div className="divider thin"></div> */}
 
 					<h2 id="about">About Me</h2>
-					<ExpandableText lines={3}>
+					<ExpandableText lines={12}>
 						<p className="aboutSummary buffer flushedTop">
 							I'm a software engineer with a passion for building scalable and efficient solutions. I have experience in both frontend and backend development, with a focus on API integrations, cloud infrastructure, and enterprise data synchronization. I enjoy solving complex problems and designing systems that can handle real-world constraints.
 							<br/><br/>
