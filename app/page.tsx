@@ -110,7 +110,7 @@ export default function Home() {
 								<li className="square">System Architecture & Platform Design</li>
 								<li className="square">DevOps, Monitoring & Operational Tooling</li>
 								<li className="square">Technical Documentation & Client Communication</li>
-								<li className="square">Python | JavaScript | TypeScript | React | Node.js</li>
+								<li className="square">Python | JavaScript | TypeScript | React | Node.js | Angular</li>
 							</ul>
 						</ExpandableText>
 
