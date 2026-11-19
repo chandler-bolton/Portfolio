@@ -32,7 +32,7 @@ export default function Home() {
 							</h2>
 
 							<h3>
-								Cloud & Integrations Engineer
+								Full-Stack Web Developer & Cloud Engineer
 							</h3>
 						</div>
 
