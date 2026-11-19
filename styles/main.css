@@ -334,7 +334,7 @@ li.sublist {
 }
 
 .textContainer {
-  max-width: 90%;
+  max-width: var(--standard-container-width);
   margin: 1rem auto;
   display: flex;
   flex-direction: column;
