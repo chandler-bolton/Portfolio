@@ -41,15 +41,15 @@ export default function Home() {
 							<div className="textContainer rightAlign">
 								<ExpandableText lines={6} className="heroIntro">
 									<p className="buffer">
-										I'm a Cloud & Integrations Engineer with a passion for building scalable and efficient solutions.
+										I'm a Full-Stack Web Developer & Cloud Engineer with a passion for building scalable and efficient solutions.
 									</p>
 
 									<p className="buffer flushedTop">
-										I design and build backend systems focused on API integrations, cloud infrastructure, and enterprise data synchronization. I also design and build frontend modules for data visualization and user interaction.
+										I design and build frontend solutions focused on user experience, reliability, and data visualization. Backend-wise, I build systems focused on API integrations, cloud infrastructure, and enterprise data synchronization.
 									</p>
 
 									<p className="buffer flushedTop">
-										My work centers on solving real-world problems involving distributed systems, data consistency, and cross-platform orchestration.
+										My work centers on solving real-world problems involving user experience, distributed systems, data consistency, and cross-platform orchestration.
 									</p>
 								</ExpandableText>
 							</div>

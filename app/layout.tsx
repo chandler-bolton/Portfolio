@@ -13,14 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Chandler Bolton | Cloud & Integrations Engineer",
+  title: "Chandler Bolton | Full-Stack Web Developer & Cloud Engineer",
   description:
-    "Portfolio showcasing cloud infrastructure, system architecture, and enterprise integration work.",
+    "Portfolio showcasing cloud infrastructure, system architecture, full-stack, web development, and enterprise integration work.",
 
   openGraph: {
-    title: "Chandler Bolton | Cloud & Integrations Engineer",
+    title: "Chandler Bolton | Full-Stack Web Developer & Cloud Engineer",
     description:
-      "Cloud infrastructure, API integrations, and distributed systems engineering portfolio.",
+      "Cloud infrastructure, API integrations, full-stack, web development, and distributed systems engineering portfolio.",
     url: "https://www.chandler-bolton-portfolio.dev",
     siteName: "Chandler Bolton Portfolio",
     images: [
